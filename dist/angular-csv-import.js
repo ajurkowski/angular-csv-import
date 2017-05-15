@@ -18,7 +18,8 @@ csvImport.directive('ngCsvImport', function() {
 			result: '=?',
 			encoding: '=?',
 			encodingVisible: '=?',
-			accept: '=?'
+			accept: '=?',
+			file: '=?'
 		},
 		template: '<div>'+
 		  '<div ng-show="headerVisible"><div class="label">Header</div><input type="checkbox" ng-model="header"></div>'+
@@ -48,7 +49,8 @@ csvImport.directive('ngCsvImport', function() {
 
 			element.on('change', function(onChangeEvent) {
 				var reader = new FileReader();
-				scope.filename = onChangeEvent.target.files[0].name;
+				scope.file = onChangeEvent.target.files[0];
+				scope.filename = scope.file.name;
 				reader.onload = function(onLoadEvent) {
 					scope.$apply(function() {
 						var content = {
