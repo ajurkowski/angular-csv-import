@@ -1,7 +1,7 @@
 {
-  "name": "angular-csv-import",
-  "author": "Bahaaldine AZARMI <bahaaldine@gmail.com>",
-  "version": "0.0.29",
+  "name": "angular-csv-import-ydp",
+  "author": "Ariel Jurkowski <ajurkowski@ydp.pl>"",
+  "version": "0.1.0",
   "main": "./lib/angular-csv-import.js",
   "engines": {
     "node": ">= 0.10.0"
