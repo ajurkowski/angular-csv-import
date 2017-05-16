@@ -1,5 +1,3 @@
-/*! angular-csv-import - v0.0.36 - 2016-11-01
-* Copyright (c) 2016 ; Licensed  */
 'use strict';
 
 var csvImport = angular.module('ngCsvImport', []);
@@ -26,7 +24,8 @@ csvImport.directive('ngCsvImport', function() {
 			mdInputClass: '@?',
 			mdButtonTitle: '@?',
 			mdSvgIcon: '@?',
-			uploadButtonLabel: '='
+			uploadButtonLabel: '=',
+			file: '=?'
 		},
 		template: function(element, attrs) {
 			var material = angular.isDefined(attrs.material);
@@ -100,7 +99,8 @@ csvImport.directive('ngCsvImport', function() {
 					return;
 				}
 
-				scope.filename = onChangeEvent.target.files[0].name;
+				scope.file = onChangeEvent.target.files[0];
+				scope.filename = scope.file.name;
 				var reader = new FileReader();
 				reader.onload = function(onLoadEvent) {
 					scope.$apply(function() {
